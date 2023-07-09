@@ -8,9 +8,7 @@ function reload() {
 }
 
 async function fetchNews(query) {
-  const reqOptions = { 'mode': 'cors', headers: { 'Access-Control-Allow-Origin': '*' } }; 
-
-  const response = await fetch(`${url}${query}&apiKey=${API_KEY}`, reqOptions);
+  const response = await fetch(`${url}${query}&apiKey=${API_KEY}`);
   const data = await response.json();
   bindData(data.articles);
 }
